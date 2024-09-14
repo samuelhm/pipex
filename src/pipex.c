@@ -6,7 +6,7 @@
 /*   By: shurtado <shurtado@student.42barcelona.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 15:55:11 by shurtado          #+#    #+#             */
-/*   Updated: 2024/09/14 18:13:41 by shurtado         ###   ########.fr       */
+/*   Updated: 2024/09/14 18:24:59 by shurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ static void	open_files(t_pipedata *data, char *pathin, char *pathout)
 		return ;
 	data->infile = open(pathin, O_RDONLY);
 	data->outfile = open(pathout, O_WRONLY | O_CREAT | O_TRUNC, 0644);
-
 }
 
 static bool	data_is_ok(t_pipedata *data)
@@ -82,6 +81,4 @@ int	main(int argc, char *argv[])
 	waitpid(data->pid2, NULL, 0);
 	free(data);
 	return (0);
-
-
 }
